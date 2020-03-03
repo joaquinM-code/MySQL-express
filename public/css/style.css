@@ -1,0 +1,35 @@
+body{
+    text-align: center;
+    margin: auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #3C3C3B;
+    color: cornsilk;
+}
+
+header{
+    margin-top: 0;
+    color:  cornsilk;
+    background-color: rgb(26, 26, 24);
+    padding: 20px 50px;
+    font-size: 1.5rem;
+    text-align: left;
+	border-bottom: 5px solid cornsilk;
+	margin-bottom: 20px;
+}
+
+td {
+    width: 200px;
+    height: 200px;
+    font-size: 5.5em;
+}
+table {
+    margin: 5px auto;
+}
+.vert {
+    border-left: 4px solid cornsilk;
+    border-right: 4px solid cornsilk;
+}
+.hori {
+    border-top: 4px solid cornsilk;
+    border-bottom: 4px solid cornsilk;
+}
