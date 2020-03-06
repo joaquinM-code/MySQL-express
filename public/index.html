@@ -3,22 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="../utils/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Test</title>
 </head>
 <body>
     <header>
-        <h1>Works</h1>
+        <h1>Super Games</h1>
     </header>
-    <main>
-        <form action="/users/me" method="post">
-          <input type="text" name="test">
-          <input type="submit" value="Go">
+    <main class="container text-left">
+        <h2>Register</h2>
+        <form action="/users/me" method="post" class="w-50 m-auto">
+            <input type="text" name="name" placeholder="Name" class="form-control">
+            <input type="email" name="email" placeholder="Email" class="form-control">
+            <input type="password" name="password" placeholder="Password" class="form-control">
+            <input type="password" name="password2" placeholder="Repeat password" class="form-control">
+            <div class="text-center">
+                <input type="submit" value="Register" class="btn btn-secondary">
+            </div>
         </form>
     </main>
     <div id="response">
 
     </div>
-<script src="js/scripts.js"></script>
+    <div>
+        <button id="test-header">Test header</button>
+    </div>
+
+<script src="../utils//jquery.min.js"></script>
+<script src="../utils/popper.min.js"></script>
+<script src="../utils/bootstrap.min.js"></script>
+<script src="js/register.js"></script>
 </body>
 </html>

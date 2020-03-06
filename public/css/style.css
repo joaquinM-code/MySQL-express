@@ -17,19 +17,6 @@ header{
 	margin-bottom: 20px;
 }
 
-td {
-    width: 200px;
-    height: 200px;
-    font-size: 5.5em;
-}
-table {
-    margin: 5px auto;
-}
-.vert {
-    border-left: 4px solid cornsilk;
-    border-right: 4px solid cornsilk;
-}
-.hori {
-    border-top: 4px solid cornsilk;
-    border-bottom: 4px solid cornsilk;
+input{
+    margin:20px;
 }

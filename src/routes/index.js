@@ -1,5 +1,7 @@
 const express = require('express');
 const db = require('../DB');
+const validate = require('../middleware/validate');
+
 
 
 const router = express.Router();
@@ -14,26 +16,31 @@ router.get('/users/all' , async (req , res, next)=>{
     }
 })
 
-router.get('/users/one/:id' , async (req , res, next)=>{
-    const id = req.params.id;
+router.get('/users/me' , validate.authorization, async (req , res, next)=>{
     try{
-        const results = await db.selectOneById(id);
-        res.json(results);
+        res.send(req.body);
     }catch(e){
         res.sendStatus(500);
-        console.log(e);
     }
 })
 
-router.post('/users/me' , async (req , res)=>{
+router.post('/users/register' , validate.userInput , async (req , res)=>{
     try{
-        const results = await db.insertOne(req.body.name);
-        res.send("ok");
+        result = await db.insertOne(req.body);
+        const token = await db.insertToken(result.insertId , req.body.name);
+        res.json({
+            user: req.body.name,
+            token
+        });
     }catch(e){
         if(e.code == "ER_DUP_ENTRY"){
-           return res.send('The user already exists')
+           return res.json({
+               error:'The user or email already exist'
+           })
         }
-        res.send("We are experiencing some internal errors, please try again later")
+        res.json({
+            error:"We are experiencing some internal errors, please try again later"
+        })
     }
 })
 module.exports = router;
